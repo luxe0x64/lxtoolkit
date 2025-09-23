@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 import qrcode
 import os
+import pyshorteners
 from colorama import init, Fore
 init()
+
+# Author: luxe0x64
+# date of an update: 09/23/2025
+# Version 1.1
+# update description: URLshortener added.
+
+
 
 class QRcodeMaker:
     def __init__(self):
@@ -36,9 +44,36 @@ class QRcodeMaker:
             print(e)
     pass
 
+
+class URLshortener:
+    def __init__(self):
+        self.user = None
+    pass
+
+    def Shortener(self):
+        os.system('clear && cat .url_shortener_banner.txt')
+        try:
+            self.user = input(str("URL: "))
+            print("[*] URL: " + self.user)
+        except KeyboardInterrupt:
+            print(Fore.RED + "[!] Interrupted by user. " + Fore.WHITE)
+        except Exception as e:
+            print(Fore.RED + "[!] Something went wrong. " + Fore.WHITE + e)
+        try:
+            print("[*] Shorting the URL... ")
+            self.s = pyshorteners.Shortener()
+            print(self.s.tinyurl.short(str(self.user)))
+            print(Fore.GREEN + "[*] Done. " + Fore.WHITE)
+        except KeyboardInterrupt:
+            print(Fore.RED + "[!] Interrupted by user. " + Fore.WHITE)
+        except Exception as e:
+            print(Fore.RED + "[!] Something went wrong: " + Fore.WHITE + e)
+    pass
+
 class Menu:
     def __init__(self):
         self.qr_coder = QRcodeMaker()
+        self.short = URLshortener()
     pass
 
     def clear_screen(self):
@@ -51,7 +86,8 @@ class Menu:
         os.system('cat .toolkit_banner.txt')
         print(Fore.WHITE)
         print("1. QRcode Maker")
-        print("2. Exit. ")
+        print("2. URL Shortener")
+        print("3 Exit.")
     pass
 
     def run(self):
@@ -61,6 +97,8 @@ class Menu:
             if choice == "1":
                 self.qr_coder.GenerateQRC()
             elif choice == "2":
+                self.short.Shortener()
+            elif choice == "3":
                 exit()
         except KeyboardInterrupt:
             print(Fore.RED + "[!] Interrupted by user. "+ Fore.WHITE)
