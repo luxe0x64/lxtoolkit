@@ -1,4 +1,4 @@
-Installing
+# Installing
 
 git clone https://github.com/luxe0x64/lxtoolkit.git
 cd lxtoolkit/
