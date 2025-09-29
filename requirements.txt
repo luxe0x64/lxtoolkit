@@ -1,3 +1,4 @@
 qrcode==8.2
 colorama==0.4.6
 pyshorteners==1.0.1
+python-whois==0.9.5
