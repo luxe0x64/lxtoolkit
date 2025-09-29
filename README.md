@@ -1,8 +1,10 @@
 # Installing
 
 git clone https://github.com/luxe0x64/lxtoolkit.git
-\ncd lxtoolkit/
-\npip3 install -r requirements.txt
+
+cd lxtoolkit/
+
+pip3 install -r requirements.txt
 
 # Running it.
 
