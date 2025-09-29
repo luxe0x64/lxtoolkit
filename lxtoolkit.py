@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 import qrcode
 import os
+import whois
 import pyshorteners
 from colorama import init, Fore
 init()
 
 # Author: luxe0x64
-# date of an update: 09/23/2025
-# Version 1.1
-# update description: URLshortener added.
-
+# date of an update: 09/29/2025
+# Version 1.2
+# update description: Whois function added.
 
 
 class QRcodeMaker:
@@ -70,10 +70,36 @@ class URLshortener:
             print(Fore.RED + "[!] Something went wrong: " + Fore.WHITE + e)
     pass
 
+class WhosThatMF: # Who's that mother....
+    def __init__(self):
+        self.n = None
+    pass
+
+    def CheckingMF(self):
+        os.system('clear')
+        os.system('cat .whois_banner.txt')
+        print("Who's that mother....")
+        try:
+            self.URL = input(str("URL: "))
+            print("[*] URL: " + (str(self.URL)))
+            try:
+                self.w = whois.whois(self.URL)
+                print(self.w)
+            except KeyboardInterrupt:
+                print(Fore.RED + "[!] Interrupted by user. " + Fore.WHITE)
+            except Exception as e:
+                print(Fore.RED + "[!] Something went wrong: " + Fore.WHITE + e)
+        except KeyboardInterrupt:
+            print(Fore.RED + "[!] Interrupted by user. " + Fore.WHITE)
+        except Exception as e:
+            print(Fore.RED + "[!] Something went wrong: " +  Fore.WHITE + e)
+    pass
+
 class Menu:
     def __init__(self):
         self.qr_coder = QRcodeMaker()
         self.short = URLshortener()
+        self.whosthatmf = WhosThatMF()
     pass
 
     def clear_screen(self):
@@ -87,7 +113,8 @@ class Menu:
         print(Fore.WHITE)
         print("1. QRcode Maker")
         print("2. URL Shortener")
-        print("3 Exit.")
+        print("3. Whois ")
+        print("4. Exit.")
     pass
 
     def run(self):
@@ -99,6 +126,8 @@ class Menu:
             elif choice == "2":
                 self.short.Shortener()
             elif choice == "3":
+                self.whosthatmf.CheckingMF()
+            elif choice == "4":
                 exit()
         except KeyboardInterrupt:
             print(Fore.RED + "[!] Interrupted by user. "+ Fore.WHITE)
