@@ -7,9 +7,9 @@ from colorama import init, Fore
 init()
 
 # Author: luxe0x64
-# date of an update: 09/29/2025
-# ReleaseVersion 1.2
-# update description: Whois function added.
+# date of an update: 09/30/2025
+# ReleaseVersion 1.3
+# update description: Update.sh added into the project directory, update function added into the lxtoolkit.py
 
 
 class QRcodeMaker:

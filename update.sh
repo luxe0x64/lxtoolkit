@@ -5,7 +5,7 @@ try_to_update(){
 	echo "Checking for updates..."
 	sleep 0.3
 	check_for_update=$(cat lxtoolkit.py | grep -i ReleaseVersion)
-	if [[ $check_for_update == *"1.2" ]]; then
+	if [[ $check_for_update == *"1.3" ]]; then
 		clear
 		touch .no_update_required.txt && echo "No update required. " > .no_update_required.txt
 		echo "No update required. "
