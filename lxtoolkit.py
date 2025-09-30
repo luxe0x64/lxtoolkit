@@ -8,7 +8,7 @@ init()
 
 # Author: luxe0x64
 # date of an update: 09/29/2025
-# Version 1.2
+# ReleaseVersion 1.2
 # update description: Whois function added.
 
 
@@ -118,6 +118,7 @@ class Menu:
     pass
 
     def run(self):
+        os.system('bash update.sh')
         self.display_menu()
         try:
             choice = input("Select an option: ")
