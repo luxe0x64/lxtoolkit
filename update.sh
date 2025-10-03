@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# created by: luxe0x64
+# For lxtoolkit
+# Version is Alpha2
+
 check_ff() {
 	check=$(ls .a | grep ".no_update_required.txt")
 	if [[ "$check" =~ ".no_update_required.txt" ]]; then

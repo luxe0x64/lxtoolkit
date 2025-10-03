@@ -10,7 +10,7 @@ init()
 # date of an update: 09/30/2025
 # ReleaseVersion Alpha2
 # update description: Update.sh added into the project directory, update function added into the lxtoolkit.py
-# update: new update funcitonality
+# update: new update funcitonality. Now it works using world wide network :)
 
 class QRcodeMaker:
     def __init__(self):
