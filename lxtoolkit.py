@@ -8,9 +8,9 @@ init()
 
 # Author: luxe0x64
 # date of an update: 09/30/2025
-# ReleaseVersion 1.3
+# ReleaseVersion Alpha2
 # update description: Update.sh added into the project directory, update function added into the lxtoolkit.py
-
+# update: new update funcitonality
 
 class QRcodeMaker:
     def __init__(self):
